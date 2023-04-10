@@ -30,6 +30,12 @@ public class AppDrawerActivity extends AppCompatActivity {
         appInfoList = getAppInfoList();
         adapter = new AppAdapter(appInfoList,this);
         recyclerView.setAdapter(adapter);
+
+//        int spanCount = 3; // number of columns in the grid
+//        int spacing = 50; // spacing between items in pixels
+//        boolean includeEdge = true; // include edge spacing
+//
+//        recyclerView.addItemDecoration(new GridSpacingItemDecoration(spanCount, spacing, includeEdge));
     }
 
     private List getAppInfoList() {
