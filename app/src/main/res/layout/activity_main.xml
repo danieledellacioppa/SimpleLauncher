@@ -6,26 +6,43 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
+
+    <!-- app drawer button goes here -->
+
     <TextView
         android:id="@+id/textView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="356dp"
-        android:layout_marginBottom="167dp"
+        android:layout_marginStart="61dp"
+        android:layout_marginTop="241dp"
+        android:layout_marginBottom="378dp"
         android:text="SimpleLaucher"
         app:layout_constraintBottom_toTopOf="@+id/chromeButton"
-        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <ImageView
         android:id="@+id/chromeButton"
-        android:layout_width="74dp"
+        android:layout_width="93dp"
         android:layout_height="0dp"
-        android:layout_marginBottom="114dp"
+        android:layout_marginStart="54dp"
+        android:layout_marginBottom="18dp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView"
+        app:srcCompat="@drawable/google" />
+
+    <ImageView
+        android:id="@+id/appDrawerButton"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="7dp"
+        android:layout_marginTop="38dp"
+        android:layout_marginEnd="7dp"
+        android:layout_marginBottom="38dp"
+        app:layout_constraintBottom_toTopOf="@+id/chromeButton"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/textView"
         app:layout_constraintTop_toBottomOf="@+id/textView"
         app:srcCompat="@drawable/google" />
 

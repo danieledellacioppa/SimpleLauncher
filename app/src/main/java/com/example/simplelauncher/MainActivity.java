@@ -15,6 +15,15 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         ImageView chromeButton = findViewById(R.id.chromeButton);
+        ImageView appDrawerButton = findViewById(R.id.appDrawerButton);
+
+        appDrawerButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this, AppDrawerActivity.class);
+                startActivity(intent);
+            }
+        });
 
         chromeButton.setOnClickListener(new View.OnClickListener() {
             @Override
