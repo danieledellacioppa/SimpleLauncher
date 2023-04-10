@@ -1,5 +1,7 @@
 package com.example.simplelauncher;
 
+import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -14,11 +16,14 @@ public class AppAdapter extends RecyclerView.Adapter<AppAdapter.ViewHolder>
     //    private List appList;
     private List<AppInfo> appList;
 
+    private Context context;
 
-    public AppAdapter(List<AppInfo> appList)
+    public AppAdapter(List<AppInfo> appList, Context context)
     {
         this.appList = appList;
+        this.context = context;
     }
+
 
     @Override
     public ViewHolder onCreateViewHolder(ViewGroup parent, int viewType)
@@ -33,6 +38,19 @@ public class AppAdapter extends RecyclerView.Adapter<AppAdapter.ViewHolder>
         AppInfo app = appList.get(position);
         holder.iconView.setImageDrawable(app.getAppIcon());
         holder.labelView.setText(app.getAppName());
+
+        //here we set the click listener to launch the app
+        holder.itemView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v)
+            {
+                Intent launchIntent = context.getPackageManager().getLaunchIntentForPackage(app.getPackageName());
+                if (launchIntent != null)
+                {
+                    context.startActivity(launchIntent);//null pointer check in case package name was not found
+                }
+            }
+        });
     }
 
     @Override

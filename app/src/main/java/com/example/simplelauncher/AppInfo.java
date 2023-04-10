@@ -1,5 +1,6 @@
 package com.example.simplelauncher;
 
+import android.content.Intent;
 import android.graphics.drawable.Drawable;
 
 public class AppInfo {
@@ -39,4 +40,15 @@ public class AppInfo {
     public void setAppIcon(Drawable appIcon) {
         this.appIcon = appIcon;
     }
+
+//    /**
+//     * Launches the app when the user clicks on the app icon
+//     */
+//    public void launchApp()
+//    {
+//        Intent launchIntent = getPackageManager().getLaunchIntentForPackage(getPackageName());
+//        if (launchIntent != null) {
+//            startActivity(launchIntent);//null pointer check in case package name was not found
+//        }
+//    }
 }

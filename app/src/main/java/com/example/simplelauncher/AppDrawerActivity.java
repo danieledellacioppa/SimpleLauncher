@@ -27,7 +27,7 @@ public class AppDrawerActivity extends AppCompatActivity {
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
 
         appInfoList = getAppInfoList();
-        adapter = new AppAdapter(appInfoList);
+        adapter = new AppAdapter(appInfoList,this);
         recyclerView.setAdapter(adapter);
     }
 
