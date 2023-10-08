@@ -2,6 +2,8 @@ package com.example.simplelauncher;
 
 import android.content.Context;
 import android.content.Intent;
+import android.net.Uri;
+import android.provider.Settings;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -49,6 +51,22 @@ public class AppAdapter extends RecyclerView.Adapter<AppAdapter.ViewHolder>
                 {
                     context.startActivity(launchIntent);//null pointer check in case package name was not found
                 }
+            }
+        });
+
+        // Imposta il long click listener
+        holder.itemView.setOnLongClickListener(new View.OnLongClickListener() {
+            @Override
+            public boolean onLongClick(View v) {
+                // Qui puoi lanciare l'activity delle impostazioni dell'app
+                // Ad esempio, puoi creare un Intent per l'Activity delle impostazioni
+                // e lanciarlo con startActivity()
+
+                // Per esempio, puoi lanciare l'activity delle impostazioni dell'app con:
+                Intent intent = new Intent(Settings.ACTION_APPLICATION_DETAILS_SETTINGS);
+                intent.setData(Uri.parse("package:" + app.getPackageName()));
+                context.startActivity(intent);
+                return true; // Indica che l'evento di long click è stato gestito
             }
         });
     }
