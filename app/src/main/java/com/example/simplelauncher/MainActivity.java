@@ -27,6 +27,18 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(MainActivity.this, AppDrawerActivity.class);
+                intent.putExtra("update", true);
+                startActivity(intent);
+            }
+        });
+
+        ImageView nonUpdateAppDrawerButton = findViewById(R.id.nonUpdateAppDrawerButton);
+
+        nonUpdateAppDrawerButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this, AppDrawerActivity.class);
+                intent.putExtra("update", false);
                 startActivity(intent);
             }
         });

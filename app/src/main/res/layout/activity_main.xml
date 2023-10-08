@@ -38,4 +38,15 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:srcCompat="@drawable/home" />
 
+    <ImageView
+        android:id="@+id/nonUpdateAppDrawerButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="7dp"
+        android:layout_marginEnd="7dp"
+        android:layout_marginBottom="7dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/appDrawerButton"
+        app:srcCompat="@drawable/explore" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

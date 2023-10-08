@@ -2,7 +2,6 @@ package com.example.simplelauncher;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.GridLayoutManager;
-import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Intent;
@@ -13,13 +12,12 @@ import android.os.Bundle;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.stream.IntStream;
 
 public class AppDrawerActivity extends AppCompatActivity {
 
     private RecyclerView recyclerView;
     private AppAdapter adapter;
-    private List<AppInfo> appInfoList;
+    private static List<AppInfo> appInfoList;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -29,11 +27,18 @@ public class AppDrawerActivity extends AppCompatActivity {
         recyclerView = findViewById(R.id.recycler_view);
         recyclerView.setLayoutManager(new GridLayoutManager(this,4));
 
-        appInfoList = getAppInfoList();
+        Intent intent = getIntent();
+        boolean update = intent.getBooleanExtra("update",false);
+
+        if(update){
+            appInfoList = getAppInfoList();
+        }
+
         adapter = new AppAdapter(appInfoList,this);
         recyclerView.setAdapter(adapter);
 
     }
+
 
 private List getAppInfoList()
 {
