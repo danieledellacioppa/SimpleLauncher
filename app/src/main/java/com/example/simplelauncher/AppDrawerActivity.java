@@ -33,29 +33,8 @@ public class AppDrawerActivity extends AppCompatActivity {
         adapter = new AppAdapter(appInfoList,this);
         recyclerView.setAdapter(adapter);
 
-//        int spanCount = 3; // number of columns in the grid
-//        int spacing = 50; // spacing between items in pixels
-//        boolean includeEdge = true; // include edge spacing
-//
-//        recyclerView.addItemDecoration(new GridSpacingItemDecoration(spanCount, spacing, includeEdge));
     }
 
-//    private List getAppInfoList() {
-//        List<AppInfo> appList = new ArrayList<>();
-//        PackageManager packageManager = getPackageManager();
-//        Intent intent = new Intent(Intent.ACTION_MAIN, null);
-//        intent.addCategory(Intent.CATEGORY_LAUNCHER);
-//        List resolveInfoList = packageManager.queryIntentActivities(intent, 0);
-//
-//        IntStream.range(0, resolveInfoList.size()).forEach(i -> {
-//            AppInfo appInfo = new AppInfo();
-//            appInfo.setAppName(((ResolveInfo) resolveInfoList.get(i)).loadLabel(packageManager).toString());
-//            appInfo.setPackageName(((ResolveInfo) resolveInfoList.get(i)).activityInfo.packageName);
-//            appInfo.setAppIcon(((ResolveInfo) resolveInfoList.get(i)).loadIcon(packageManager));
-//            appList.add(appInfo);
-//        });
-//        return appList;
-//    }
 private List getAppInfoList()
 {
     List appList = new ArrayList<>();

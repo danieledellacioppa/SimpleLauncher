@@ -1,9 +1,16 @@
 package com.example.simplelauncher;
 
+import static android.Manifest.permission.READ_EXTERNAL_STORAGE;
+
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.app.ActivityCompat;
+import androidx.core.content.ContextCompat;
 
 import android.content.Intent;
+import android.content.pm.PackageManager;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.ImageView;
 
@@ -23,10 +30,7 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+        
     }
 
-    public void onChromeButtonClick(View v) {
-        Intent launchIntent = getPackageManager().getLaunchIntentForPackage("com.android.chrome");
-        startActivity(launchIntent);
-    }
 }

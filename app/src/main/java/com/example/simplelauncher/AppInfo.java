@@ -41,14 +41,4 @@ public class AppInfo {
         this.appIcon = appIcon;
     }
 
-//    /**
-//     * Launches the app when the user clicks on the app icon
-//     */
-//    public void launchApp()
-//    {
-//        Intent launchIntent = getPackageManager().getLaunchIntentForPackage(getPackageName());
-//        if (launchIntent != null) {
-//            startActivity(launchIntent);//null pointer check in case package name was not found
-//        }
-//    }
 }
